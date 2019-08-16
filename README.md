@@ -34,7 +34,7 @@
 
      that command will launch the user interface of turtle simulator like picture bellow this.
 
-     <img src="images/2.png" width="550" height="500"/>
+     <img src="Images/2.png" width="550" height="500"/>
   
      
 
@@ -42,6 +42,6 @@
 
     - *rosrun turtlesim turtle_teleop_key*
    
-      <img src="images/3.png" width="550" height="500"/>
+      <img src="Images/3.png" width="550" height="500"/>
    
       
