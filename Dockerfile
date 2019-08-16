@@ -69,7 +69,10 @@ RUN useradd -m sudoer \
 	&& chown -R --from=root sudoer /home/sudoer \ 
 	&& echo 'echo -ne "\033]10;#FFFFFF\007"' >> /etc/skel/.bashrc \
 	&& echo 'echo -ne "\033]11;#2F0909\007"' >> /etc/skel/.bashrc \
-	&& echo 'cd' >> /etc/skel/.bashrc	 
+	&& echo 'cd' >> /etc/skel/.bashrc
+
+RUN sudo rosdep init \
+	&& rosdep update 
 
 WORKDIR /home/sudoer
 ENV HOME /home/sudoer
@@ -79,12 +82,7 @@ ENV PATH $HOME/.local/bin:$PATH
 
 # Avoid first use of sudo warning.
 RUN touch /home/sudoer/.sudo_as_admin_successful
-
-#change baground shell
-RUN echo 'echo -ne "\033]10;#430064\007"' >> /home/sudoer/.bashrc
-##RUN echo 'echo -ne "\033]11;#FFFFFF\007"' >> /home/sudoer/.bashrc
-#RUN echo 'cd' >> /home/sudoer/.bashrc
-
+RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
 #setting the home directory
 #RUN echo 'HOME=/home/sudoer' >> /home/sudoer/.bashrc
 #RUN echo 'export NO_AT_BRIDGE=1' >> /home/sudoer/.bashrc
