@@ -35,13 +35,10 @@ RUN apt-get update \
 		finger \
 		software-properties-common \
 		pkg-config \
-  		python3-pip \
-		python3-dev \
-		dbus-x11 \
+  		dbus-x11 \
 		x11-xserver-utils \
 		net-tools \
 		man-db \
-		firefox \
 		xorg \
 		xterm \
 	&& apt-get autoremove -y \
@@ -83,8 +80,5 @@ ENV PATH $HOME/.local/bin:$PATH
 # Avoid first use of sudo warning.
 RUN touch /home/sudoer/.sudo_as_admin_successful
 RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
-#setting the home directory
-#RUN echo 'HOME=/home/sudoer' >> /home/sudoer/.bashrc
-#RUN echo 'export NO_AT_BRIDGE=1' >> /home/sudoer/.bashrc
 
 CMD [ "/bin/bash" ]
