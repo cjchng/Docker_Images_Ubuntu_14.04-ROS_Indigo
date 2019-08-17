@@ -50,17 +50,11 @@ RUN apt-get update \
 
 # Create user "Sudoer" with sudo powers
 RUN useradd -m sudoer \
-	&& echo "sudoer:123456" | chpasswd \
 	&& usermod -aG sudo sudoer \
-	#&& echo '%sudo ALL=(ALL:ALL) ALL' >> /etc/sudoers \
+	&& echo '%sudo ALL=(ALL:ALL) ALL' >> /etc/sudoers \
 	&& sudo usermod -s /bin/bash sudoer \
 	&& cp /root/.bashrc /home/sudoer/ \
-	&& echo "You success make a new user, good job !!" >> /etc/skel/readme.txt \
-	#&& mkdir /home/sudoer/workdir \
-	&& chown -R --from=root sudoer /home/sudoer \ 
-	&& echo 'echo -ne "\033]10;#FFFFFF\007"' >> /etc/skel/.bashrc \
-	&& echo 'echo -ne "\033]11;#2F0909\007"' >> /etc/skel/.bashrc \
-	&& echo 'cd' >> /etc/skel/.bashrc
+	&& chown -R --from=root sudoer /home/sudoer 
 
 RUN sudo rosdep init \
 	&& rosdep update 
