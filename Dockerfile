@@ -17,24 +17,18 @@ RUN apt-get update \
 		openssh-server \
 		build-essential \
 		gcc \
-		libsqlite3-dev \
-		sqlite3 \
 		xdg-utils \
  		nano \
 		git \
-		gedit \
 		make \
 		sudo \
-		tree \
 		vim \
 		unzip \
 		curl \ 
-		wget \
-		gdb \
-		g++ \
-		finger \
 		software-properties-common \
 		pkg-config \
+		python3-pip \
+		python3-dev \
   		dbus-x11 \
 		x11-xserver-utils \
 		net-tools \
