@@ -1,6 +1,6 @@
 # Docker Images Ubuntu 14.04+ROS Indigo
 
-This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subsystem for Linux) **
+This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subsystem for Linux) or using CMD**
 
 1. Pull docker images 
 
@@ -16,7 +16,7 @@ This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subs
 
      
 
-   b. To build container in **windows OS with Installed WSL (Windows Subsystem for Linux)** you must install Xserver such as in here I use [X410](https://token2shell.com/howto/x410/):
+   b. To build container in **windows OS with Installed WSL (Windows Subsystem for Linux) or using CMD** you must install Xserver such as in here I use [X410](https://token2shell.com/howto/x410/):
 
    - docker run -it --privileged=true --net=host -e DISPLAY=docker.for.win.localhost:0.0 --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name **>name-container<** anto112/ros_lsd_slam /bin/bash
 
@@ -28,7 +28,7 @@ This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subs
 
    - *docker exec -it -e DISPLAY **>name-container<** bash*
 
-   b. If you want to access the container from **windows OS with Installed WSL (Windows Subsystem for Linux)** use the command:
+   b. If you want to access the container from **windows OS with Installed WSL (Windows Subsystem for Linux) or using CMD** use the command:
 
    - docker exec -it -e DISPLAY=docker.for.win.localhost:0.0 **>name-container<** bash
 
