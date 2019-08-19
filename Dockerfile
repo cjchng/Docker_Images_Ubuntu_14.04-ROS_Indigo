@@ -51,7 +51,7 @@ RUN apt-get update \
 # Create user "Sudoer" with sudo powers
 RUN useradd -m sudoer \
 	&& usermod -aG sudo sudoer \
-	&& echo '%sudo ALL=(ALL:ALL) ALL' >> /etc/sudoers \
+	&& echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers \
 	&& sudo usermod -s /bin/bash sudoer \
 	&& cp /root/.bashrc /home/sudoer/ \
 	&& chown -R --from=root sudoer /home/sudoer 
