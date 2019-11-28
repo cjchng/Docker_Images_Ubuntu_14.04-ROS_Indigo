@@ -25,6 +25,8 @@ This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subs
    a. If you want to access the container from **Linux OS** use the command:
 
    - *docker exec -it -e DISPLAY **>name-container<** bash*
+   - for instance, if name is try-ros
+   -  docker exec -it -e Display try-ros bash
 
    b. If you want to access the container from **windows OS with Installed WSL (Windows Subsystem for Linux) or using CMD** use the command:
 
@@ -32,12 +34,21 @@ This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subs
 
 4. Test the image can work
 
-   The easy way to test ROS(Robot Operating System) node is running the turtle simulator. Both  of **Linux OS** of **windows OS with Installed WSL (Windows Subsystem for Linux)** is same. follow this guide to running that using docker container:
+   The easy way to test ROS(Robot Operating System) node is running the turtle simulator. Both  of **Linux OS** of **windows OS with Installed WSL (Windows Subsystem for Linux)** is same. follow this guide to running that inside docker container:
 
    a. starting roscore 
 
    ​		After you get in terminal of container, typing the comand ***roscore*** . that have function for collection of [nodes](http://wiki.ros.org/Nodes) and programs that are pre-requisites of a ROS-based system. You **must** have a roscore running in order for ROS nodes to communicate .
+   - for instance, run command inside container
+   ---------------------------
+   - sudoer@cj-208:~$ roscore
+   ----------------------------
+   then, echo:
+   ...
+   ...
+   started core service [/rosout]
 
+   
    b. run turtle simulator
 
    ​		you just need typing the command:
@@ -47,12 +58,26 @@ This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subs
      that command will launch the user interface of turtle simulator like picture bellow this.
 
      <img src="Images/2.png" width="550" height="500"/>
+    -  for example:
+    --------------------------------------------------------
+      cj@cj-208(210.240.245.91):~
+      $>>docker exec -it -e DISPLAY try-ros bash
+      sudoer@cj-208:~$ rosrun turtlesim turtlesim_node 
+    --------------------------------------------------------
      
-     
-
    c. the last is typing command for controller the turtle:
 
     - *rosrun turtlesim turtle_teleop_key*
+    -----------------------------------------------------------
+      cj@cj-208(210.240.245.91):~
+      $>>docker exec -it -e DISPLAY try-ros bash
+      sudoer@cj-208:~$ rosrun turtlesim turtle_teleop_key 
+          Reading from keyboard                #his is command echo 
+          ---------------------------
+          Use arrow keys to move the turtle.   #Note: Focused cursor at command window while pressed arrow key to animate 
+     -----------------------------------------------------------
+      
+    -----------------------------------------------------------
 
       <img src="Images/3.png" width="550" height="500"/>
 
