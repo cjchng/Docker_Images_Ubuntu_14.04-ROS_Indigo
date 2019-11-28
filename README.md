@@ -12,16 +12,14 @@ This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subs
 
    a. To build container in **Linux OS** you can use the command:
 
-   - *docker run -it --privileged=true --net=host -e DISPLAY --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name **>name-container<** anto112/ros_lsd_slam /bin/bash*
-
-     
+   - *docker run -it --privileged=true --net=host -e DISPLAY --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name **>name-container<** anto112/ros_lsd_slam /bin/bash*   
 
    b. To build container in **windows OS with Installed WSL (Windows Subsystem for Linux) or using CMD** you must install Xserver such as in here I use [X410](https://token2shell.com/howto/x410/):
 
    - docker run -it --privileged=true --net=host -e DISPLAY=docker.for.win.localhost:0.0 --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name **>name-container<** anto112/ros_lsd_slam /bin/bash
-
-   ***>name-container<** =modify this name with your own
-
+  
+   ***>name-container<** =modify this name with your own, such as setting name to 'try-ros'
+   -  docker run -it -d --privileged=true --net=host -e DISPLAY --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name=try-ros anto112/ros_lsd_slam /bin/bash 
 3. Get in to container
 
    a. If you want to access the container from **Linux OS** use the command:
