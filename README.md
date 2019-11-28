@@ -39,10 +39,10 @@ This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subs
    a. starting roscore 
 
    ​		After you get in terminal of container, typing the comand ***roscore*** . that have function for collection of [nodes](http://wiki.ros.org/Nodes) and programs that are pre-requisites of a ROS-based system. You **must** have a roscore running in order for ROS nodes to communicate .
-   - for instance, run command inside container
-   ---------------------------
+   - run command inside container, in my case
+   - *--------------------------
    - sudoer@cj-208:~$ roscore
-   ----------------------------
+   - *---------------------------
    then, echo:
    ...
    ...
@@ -59,25 +59,25 @@ This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subs
 
      <img src="Images/2.png" width="550" height="500"/>
     -  for example:
-    --------------------------------------------------------
-      cj@cj-208(210.240.245.91):~
-      $>>docker exec -it -e DISPLAY try-ros bash
-      sudoer@cj-208:~$ rosrun turtlesim turtlesim_node 
-    --------------------------------------------------------
+    - *-------------------------------------------------------
+    -  cj@cj-208(210.240.245.91):~
+    -  $>>docker exec -it -e DISPLAY try-ros bash
+    -  sudoer@cj-208:~$ rosrun turtlesim turtlesim_node 
+    - *-------------------------------------------------------
      
    c. the last is typing command for controller the turtle:
 
-    - *rosrun turtlesim turtle_teleop_key*
-    -----------------------------------------------------------
-      cj@cj-208(210.240.245.91):~
-      $>>docker exec -it -e DISPLAY try-ros bash
-      sudoer@cj-208:~$ rosrun turtlesim turtle_teleop_key 
-          Reading from keyboard                #his is command echo 
-          ---------------------------
-          Use arrow keys to move the turtle.   #Note: Focused cursor at command window while pressed arrow key to animate 
-     -----------------------------------------------------------
+    -*rosrun turtlesim turtle_teleop_key*
+    -*----------------------------------------------------------
+    -  cj@cj-208(210.240.245.91):~
+    -  $>>docker exec -it -e DISPLAY try-ros bash
+    -  sudoer@cj-208:~$ rosrun turtlesim turtle_teleop_key 
+    -      Reading from keyboard                #his is command echo 
+    -      ---------------------------
+    -      Use arrow keys to move the turtle.   #Note: Focused cursor at command window while pressed arrow key to animate 
+    - -*----------------------------------------------------------
       
-    -----------------------------------------------------------
+    - -*----------------------------------------------------------
 
       <img src="Images/3.png" width="550" height="500"/>
 
