@@ -18,14 +18,16 @@ This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subs
 
    - docker run -it --privileged=true --net=host -e DISPLAY=docker.for.win.localhost:0.0 --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name **>name-container<** anto112/ros_lsd_slam /bin/bash
   
-   ***>name-container<** =modify this name with your own, such as setting name to 'try-ros'
+   ***>name-container<** = modify this name with your own, such as setting name to 'try-ros'
+   
    -  docker run -it -d --privileged=true --net=host -e DISPLAY --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name=try-ros anto112/ros_lsd_slam /bin/bash 
+   
 3. Get in to container
 
    a. If you want to access the container from **Linux OS** use the command:
 
    - *docker exec -it -e DISPLAY **>name-container<** bash*
-   - for instance, if name is try-ros
+   -  for instance, if name is try-ros
    -  docker exec -it -e Display try-ros bash
 
    b. If you want to access the container from **windows OS with Installed WSL (Windows Subsystem for Linux) or using CMD** use the command:
@@ -75,9 +77,7 @@ This Image can use in **Linux OS and windows OS with Installed WSL (Windows Subs
     -      Reading from keyboard                #his is command echo 
     -      ---------------------------
     -      Use arrow keys to move the turtle.   #Note: Focused cursor at command window while pressed arrow key to animate 
-    - -*----------------------------------------------------------
-      
-    - -*----------------------------------------------------------
+    
 
       <img src="Images/3.png" width="550" height="500"/>
 
